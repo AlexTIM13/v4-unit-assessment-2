@@ -160,14 +160,6 @@ console.log(gameInfo)
 
 //CODE HERE
 
-
-  for (let property in shapes) {
-    if (property.includes % 2 === 0) {
-        delete property.includes
-    }
-  }
-
-console.log(shapes)
   
   
 ////////////////////PROBLEM 9////////////////////

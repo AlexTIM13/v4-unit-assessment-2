@@ -37,12 +37,19 @@ let foods = [
 
 //CODE HERE
 
+foods.forEach(function(food, index){
+  foods[0] = ({name: 'bread',carbs: 36,protein: 8,fat: 2, calories: 0 })
+  foods[1] = ({name: 'mayo mustard mix',carbs: 0,protein: 0,fat: 10,calories:0})
+  foods[2] = ({name: 'turkey', carbs: 0, protein: 25, fat: 1, calories:0 })
+  foods[3] = ({name: 'cheese', carbs: 0, protein: 5,fat: 7,calories:0 })
+  foods[0].calories = foods[0].carbs + foods[0].protein + foods[0].fat
+  foods[1].calories = foods[1].carbs + foods[1].protein + foods[1].fat
+  foods[2].calories = foods[2].carbs + foods[2].protein + foods[2].fat
+  foods[3].calories = foods[3].carbs + foods[3].protein + foods[3].fat
+  return foods
+})
 
-
-
-
-
-
+console.log(foods)
 
 //////////////////////////////////PROBLEMS 2-4//////////////////////////////////
 /*
@@ -89,13 +96,12 @@ const products = [
 
 //CODE HERE
 
-const saleProducts = products.map(function (product,index) {
-  product.price * .25
+const saleProducts = products.map(function(product) {
+  product.price -= (product.price * .25)
   return product
 })
   
 console.log(saleProducts)
-console.log(products)
 
 
 ////////////////////PROBLEM 3////////////////////
@@ -109,8 +115,8 @@ console.log(products)
 //CODE HERE
 
 const blueProducts = products.filter(function(product) {
-  if (product.color[0] && product.color[1]  === "blue")
-    return true
+  if (product.color.includes("blue")) {
+    return true}
   });
 
 console.log(blueProducts)
@@ -124,9 +130,7 @@ console.log(blueProducts)
 
 //CODE HERE
 
-const orderTotal = products
-  .filter(product => product.color[0] = "blue")
-  .reduce((total, product) => total + product.price, 0)
+const orderTotal = blueProducts.reduce((total, product) => total + product.price, 0)
 
 console.log(orderTotal)
 
